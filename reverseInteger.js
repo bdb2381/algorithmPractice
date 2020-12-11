@@ -32,24 +32,3 @@ var reverse = function(x) {
  
 };
 
-
-// version 2
-var isPalindrome = function(x) {
-  if( x < 0 ) {
-       return false
-  }
-  
-  let reversed = []
-  let input = x 
-  
-  while(x){
-      lastNumber = x % 10
-      x = (x - lastNumber) / 10
-     reversed.push(lastNumber)
-  }
-  
-  let final = reversed.join("")    
-  
-  return final > Math.pow(2, 31) ? 0 : input == final ?  true : false
-     
-};
