@@ -42,3 +42,19 @@ var smallerNumbersThanCurrent = function(nums) {
   }   
   return(output)
 };
+
+
+// Version 3 - sort into order first
+// time O(n) space O(n)
+var smallerNumbersThanCurrent = function(nums) {
+  let output = []
+  
+  let sortedNums = [...nums].sort((a,b) => a-b)  //  return new array from smallest to largest 
+    
+  output = nums.map(num => sortedNums.indexOf(num)); 
+  // since indexOf returns the index of the FIRST match, this index represents how many are smaller.
+  // if duplicates, only need to use the first index match
+
+  
+  return(output)
+};
