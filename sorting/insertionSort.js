@@ -9,7 +9,7 @@ function insertionSort(array) {
 	for(let i = 1; i < array.length; i++){
 		let j = i //j tracks how many positions traveled, until reach array.length
 		
-		while ( array[j] < array[j-1]){  // so long as j is smaller then its leftside neighhor, swap them
+		while ( array[j-1] > array[j]){   // so long as j is smaller then its leftside neighhor, swap them
 			swap(j, j-1, array)
 			j--
 		}
