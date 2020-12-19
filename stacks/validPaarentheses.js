@@ -37,3 +37,60 @@ var isValid = function(s) {
   console.log(stackArray.length)
   return stackArray.length? false : true
 };
+
+function balancedBrackets(string) {
+  // Write your code here.
+	let brackets = "()[]{}"
+	let stack = []
+	let left = {
+		"(": 1,
+		"[": 2,
+		"{": 3
+	}
+	
+	let right = {
+		")": 1,
+		"]": 2,
+		"}": 3
+	}
+	
+	
+  //Solution 2. Accounts for letters mixed in.
+  //O(n) runtime
+	function balancedBrackets(string) {
+    // Write your code here.
+    let stack = []
+    let left = {
+      "(": 1,
+      "[": 2,
+      "{": 3
+    }
+    
+    let right = {
+      ")": 1,
+      "]": 2,
+      "}": 3
+    }
+    
+    for(index in string){
+      if(string % 2 / 10 == 1){
+        return false
+      }
+      else if(left[string[index]] ){
+        stack.push(string[index])
+      }
+      else if (!right[string[index]]){
+        // skip letters
+      }
+      else if (left[stack.pop()] !== right[string[index]]){
+        return false
+      }
+      
+    }
+    return stack.length == 0
+    
+  }
+  
+  // Do not edit the line below.
+  exports.balancedBrackets = balancedBrackets;
+  
