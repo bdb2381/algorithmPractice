@@ -92,5 +92,4 @@ function balancedBrackets(string) {
   }
   
   // Do not edit the line below.
-  exports.balancedBrackets = balancedBrackets;
-  
+  // exports.balancedBrackets = balancedBrackets;
