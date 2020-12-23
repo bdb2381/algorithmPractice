@@ -41,3 +41,31 @@ function search(array, target, left, right) {
 }
 
 
+// Solution 2
+// same run time, less memory then solution 1 since the aarray is not copied
+function binarySearch(array, target) {
+	let leftPointer = 0
+	let rightPointer = array.length-1
+	let index = 0
+
+	while (leftPointer <=rightPointer){		// key to stop searching loop is when no match is found
+			let half = Math.floor((leftPointer + rightPointer)/2)
+			let possibleMatch = array[half]
+
+			if (target === possibleMatch){
+				return half
+			}
+			
+			else if (target < possibleMatch){
+				rightPointer = half - 1
+			}
+			
+			else {
+				leftPointer = half+1
+			}
+	
+	}
+	
+return -1
+
+}
