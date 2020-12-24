@@ -41,6 +41,7 @@ function search(array, target, left, right) {
 }
 
 
+
 // Solution 2
 // same run time, less memory then solution 1 since the aarray is not copied
 function binarySearch(array, target) {
