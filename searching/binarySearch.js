@@ -70,3 +70,39 @@ function binarySearch(array, target) {
 return -1
 
 }
+
+
+
+// Attempt 3 from memory
+function binarySearch(array, target) {
+  // declare pointer left = 0, right: array-1 above loop 
+	// declare half inside loop by adding pointers together/2 w/ math.floor to find half & possible match
+	// check if target === half, if so return array position
+	// else check if target is less then half, if so, set right to half-1
+	//else if target is greater then half, set left to half+1
+	// else return -1 for no match
+	
+	let left = 0
+	let right = array.length - 1
+	
+	while (left <= right){
+		let half = Math.floor((right + left)/2)
+		let match = array[half]
+
+		if (target === match){
+			return half
+		}	
+		else if (target < match ){
+			 right = half - 1
+		}
+		else if (target > match){
+			left = half + 1
+		}
+	}
+	
+	return -1
+	
+}
+
+// Do not edit the line below.
+exports.binarySearch = binarySearch;
