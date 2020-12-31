@@ -38,6 +38,7 @@ var isValid = function(s) {
   return stackArray.length? false : true
 };
 
+
 function balancedBrackets(string) {
   // Write your code here.
 	let brackets = "()[]{}"
@@ -90,6 +91,6 @@ function balancedBrackets(string) {
     return stack.length == 0
     
   }
-  
+}
   // Do not edit the line below.
-  // exports.balancedBrackets = balancedBrackets;
+  // exports.balancedBrackets = balancedBrackets
