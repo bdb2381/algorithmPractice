@@ -60,3 +60,30 @@ var isPalindrome = function(x) {
      
   return x == lastNumber || x == lastNumber/10
 };
+
+//Attempt 4 with strings in 11:03 minutes
+//Time: O(n) since need to touch each index in the input
+//Space: 0(1) no new space is created
+function isPalindrome(string) {
+	let left = 0 
+	let right = string.length - 1
+
+	while (left <= right){
+		let leftLetter = string[left]
+		let rightLetter = string[right]
+
+		if( leftLetter === rightLetter  ){
+				left++
+				right--
+		}
+		else{
+				return false
+			}
+  }
+  
+	return true
+
+}
+
+// Do not edit the line below.
+exports.isPalindrome = isPalindrome;
