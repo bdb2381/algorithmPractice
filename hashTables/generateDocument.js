@@ -30,3 +30,47 @@ function generateDocument(characters, document) {
 
 // Do not edit the line below.
 exports.generateDocument = generateDocument;
+
+
+
+// Attempt 2 
+
+function generateDocument(characters, document) {
+  // create hastable
+    // count all instances of unique chars in characters
+    // add this count to hashtable
+    
+    // loop document
+    // compare each char in doc to hashtable
+    // if match, decrease count of uniq char in hash by 1 if count > 0
+    // else if (count === 0 || !match) return false
+    
+    
+    let hash = {}
+    let count = 1
+    
+    for (let char of characters){
+      if(!hash[char]  ){
+        hash[char] = count 
+      }
+        else {
+          hash[char]++
+        }
+    }
+  
+    
+    for(let x of document){
+      if(hash[x] && hash[x] != 0){
+        hash[x]--
+      }
+      else{
+        return false
+      }	
+    }
+    
+    return true;
+  }
+  
+  // Do not edit the line below.
+  exports.generateDocument = generateDocument;
+  
