@@ -33,7 +33,7 @@ exports.generateDocument = generateDocument;
 
 
 
-// Attempt 2 
+// Attempt 2. 24.13 minutes
 
 function generateDocument(characters, document) {
   // create hastable
