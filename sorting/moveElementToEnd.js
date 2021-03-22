@@ -32,3 +32,52 @@ function swap(current, end, array){
 
 // Do not edit the line below.
 exports.moveElementToEnd = moveElementToEnd;
+
+
+// Attempt 2 27:43 minutes
+// uses only 1 while loop. 
+
+function moveElementToEnd(array, toMove) {
+	// create current pointer set to 0
+	// create end point set to array.length - 1
+
+	// while current < end
+		// if array[current] === toMove && array[current] === array[end] 
+			// end--
+		// else if current != toMove
+			//increase current since we can leave it in place
+		// else if array[current] != array[end]
+			// swap
+			// current++ to move to indx
+			// end-- 
+	
+	// return array
+
+	let current = 0
+	let end = array.length - 1 
+	
+	while (current < end){
+		
+		if ( array[current] === array[end]){
+			end--
+
+		}
+		else if(array[current] != toMove){
+			current++
+		}
+		else if (array[current] === toMove){
+			swap(current, end, array)
+			current++
+			end--
+		}
+		
+	}
+	
+	return array
+}
+
+function swap(c, e, array){
+	[array[e], array[c]] = [array[c], array[e]]
+}
+// Do not edit the line below.
+exports.moveElementToEnd = moveElementToEnd;
