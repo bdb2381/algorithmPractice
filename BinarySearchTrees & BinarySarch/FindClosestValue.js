@@ -47,3 +47,51 @@ class BST {
 
 // Do not edit the line below.
 exports.findClosestValueInBst = findClosestValueInBst;
+
+
+
+
+
+// Solution 2 
+// need more practice with trees
+function findClosestValueInBst(tree, target) {
+	return checkValue(tree, target, tree.value)
+}
+
+function checkValue(tree, target, close){
+ if(tree === null) {  // handle null case first, which means leaf and not more nodes to check
+	 return close
+ }
+ 
+ let currentValue = tree.value // make human readable reference
+
+ // check if currentValue or a prior close value is closer to the target
+ // update close if currentValue is closer
+ if( Math.abs(currentValue - target) < Math.abs(close - target)){
+		 close = currentValue
+	 } 
+			 
+ // decide which branch to go down
+	if (target > currentValue) {
+		 return checkValue(tree.right, target, close)
+	 }
+	 else if(target < currentValue){
+		 return checkValue(tree.left, target, close)
+	 }
+ 
+ // or just return when currentValue and close are ===
+	 return(close)
+ 
+}
+
+// This is the class of the input tree. Do not edit.
+class BST {
+ constructor(value) {
+	 this.value = value;
+	 this.left = null;
+	 this.right = null;
+ }
+}
+
+// Do not edit the line below.
+exports.findClosestValueInBst = findClosestValueInBst;
